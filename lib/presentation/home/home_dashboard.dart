@@ -6,12 +6,15 @@ class HomeDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
-      builder: (context, model, child) => Scaffold(
-        backgroundColor: Colors.grey[300],
-        body: SafeArea(
-          child: Column(
+      viewModelBuilder: () => HomeViewmodel(),
+      builder: (context, model, child) {
+        return Scaffold(
+          backgroundColor: Colors.grey[300],
+         /* appBar: AppBar(
+            leading: ,
+          ),*/
+          body: Column(
             children: [
-              // Header
               Container(
                 padding: const EdgeInsets.all(16),
                 child: Row(
@@ -29,7 +32,6 @@ class HomeDashboard extends StatelessWidget {
                 ),
               ),
 
-              // Main Content
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.all(16),
@@ -54,7 +56,10 @@ class HomeDashboard extends StatelessWidget {
                                 CircleAvatar(
                                   radius: 20,
                                   backgroundColor: Colors.white,
-                                  child: Icon(Icons.person, color: Colors.blue[800]),
+                                  child: Icon(
+                                    Icons.person,
+                                    color: Colors.blue[800],
+                                  ),
                                 ),
                                 const SizedBox(width: 12),
                                 Column(
@@ -234,7 +239,8 @@ class HomeDashboard extends StatelessWidget {
                                     const SizedBox(width: 8),
                                     const Expanded(
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'Explore',
@@ -286,7 +292,8 @@ class HomeDashboard extends StatelessWidget {
                                     const SizedBox(width: 8),
                                     const Expanded(
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'Refer and Earn!',
@@ -331,7 +338,8 @@ class HomeDashboard extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(20),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     const Text(
                                       'Recent Transactions',
@@ -356,10 +364,13 @@ class HomeDashboard extends StatelessWidget {
                               ),
                               Expanded(
                                 child: ListView.builder(
-                                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20,
+                                  ),
                                   itemCount: model.transactions.length,
                                   itemBuilder: (context, index) {
-                                    final transaction = model.transactions[index];
+                                    final transaction =
+                                        model.transactions[index];
                                     return _buildTransactionItem(transaction);
                                   },
                                 ),
@@ -386,16 +397,19 @@ class HomeDashboard extends StatelessWidget {
                   children: [
                     _buildBottomNavItem(Icons.home, 'Home', true),
                     _buildBottomNavItem(Icons.send, 'Send', false),
-                    _buildBottomNavItem(Icons.account_balance_wallet, 'Wallet', false),
+                    _buildBottomNavItem(
+                      Icons.account_balance_wallet,
+                      'Wallet',
+                      false,
+                    ),
                     _buildBottomNavItem(Icons.explore, 'Explore', false),
                   ],
                 ),
               ),
             ],
           ),
-        ),
-      ),
-      viewModelBuilder: () => HomeViewmodel(),
+        );
+      },
     );
   }
 
@@ -419,10 +433,7 @@ class HomeDashboard extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 label,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                ),
+                style: const TextStyle(color: Colors.white, fontSize: 12),
               ),
             ],
           ],
@@ -464,10 +475,7 @@ class HomeDashboard extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   '${transaction.type} • ${transaction.date}',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                 ),
               ],
             ),
@@ -495,20 +503,10 @@ class HomeDashboard extends StatelessWidget {
             color: isActive ? Colors.orange : Colors.transparent,
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: 24,
-          ),
+          child: Icon(icon, color: Colors.white, size: 24),
         ),
         const SizedBox(height: 4),
-        Text(
-          label,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-          ),
-        ),
+        Text(label, style: const TextStyle(color: Colors.white, fontSize: 12)),
       ],
     );
   }
