@@ -1,3 +1,5 @@
+import 'package:banking_dashboard/gen/fonts.gen.dart';
+
 import 'imports.dart';
 
 void main() {
@@ -13,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Banking Dashboard',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: FontFamily.montserrat,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: HomeDashboard(),

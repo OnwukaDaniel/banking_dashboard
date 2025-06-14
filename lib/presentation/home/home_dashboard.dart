@@ -10,9 +10,10 @@ class HomeDashboard extends StatelessWidget {
       builder: (context, model, child) {
         return Scaffold(
           backgroundColor: Colors.grey[300],
-         /* appBar: AppBar(
-            leading: ,
-          ),*/
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(kToolbarHeight),
+            child: HomeAppBar(),
+          ),
           body: Column(
             children: [
               Container(
@@ -31,7 +32,6 @@ class HomeDashboard extends StatelessWidget {
                   ],
                 ),
               ),
-
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.all(16),
@@ -51,39 +51,6 @@ class HomeDashboard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 20,
-                                  backgroundColor: Colors.white,
-                                  child: Icon(
-                                    Icons.person,
-                                    color: Colors.blue[800],
-                                  ),
-                                ),
-                                const SizedBox(width: 12),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      'Welcome,',
-                                      style: TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                    Text(
-                                      model.userName,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
