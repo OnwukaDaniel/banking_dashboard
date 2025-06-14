@@ -12,3 +12,9 @@ export 'package:banking_dashboard/presentation/home/views/home_action_buttons.da
 export 'package:banking_dashboard/presentation/home/views/home_balance_card.dart';
 export 'package:banking_dashboard/presentation/home/views/home_banner1.dart';
 export 'package:banking_dashboard/presentation/home/views/home_banner2.dart';
+export 'package:banking_dashboard/presentation/home/views/home_banner_indicator.dart';
+export 'package:banking_dashboard/presentation/home/views/home_recent_transactions.dart';
+export 'package:flutter_svg/flutter_svg.dart';
+export 'package:banking_dashboard/core/enums/home_bottom_icon.dart';
+export 'package:banking_dashboard/core/extensions/home_bottom_icon_extension.dart';
+export 'package:banking_dashboard/presentation/home/views/home_bottom_nav.dart';

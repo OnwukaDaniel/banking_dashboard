@@ -41,6 +41,16 @@ class $AssetsSvgGen {
   /// File path: assets/svg/affiliate.svg
   SvgGenImage get affiliate => const SvgGenImage('assets/svg/affiliate.svg');
 
+  /// File path: assets/svg/bottom_explore.svg
+  SvgGenImage get bottomExplore =>
+      const SvgGenImage('assets/svg/bottom_explore.svg');
+
+  /// File path: assets/svg/bottom_home.svg
+  SvgGenImage get bottomHome => const SvgGenImage('assets/svg/bottom_home.svg');
+
+  /// File path: assets/svg/bottom_send.svg
+  SvgGenImage get bottomSend => const SvgGenImage('assets/svg/bottom_send.svg');
+
   /// File path: assets/svg/compass.svg
   SvgGenImage get compass => const SvgGenImage('assets/svg/compass.svg');
 
@@ -121,9 +131,15 @@ class $AssetsSvgGen {
   /// File path: assets/svg/wallet.svg
   SvgGenImage get wallet => const SvgGenImage('assets/svg/wallet.svg');
 
+  /// File path: assets/svg/wallet2.svg
+  SvgGenImage get wallet2 => const SvgGenImage('assets/svg/wallet2.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
     affiliate,
+    bottomExplore,
+    bottomHome,
+    bottomSend,
     compass,
     convert,
     deviceSession,
@@ -149,6 +165,7 @@ class $AssetsSvgGen {
     twoFactor,
     verify,
     wallet,
+    wallet2,
   ];
 }
 

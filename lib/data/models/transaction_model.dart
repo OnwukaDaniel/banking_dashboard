@@ -4,7 +4,7 @@ class TransactionModel {
   final String type;
   final String date;
   final String amount;
-  final IconData icon;
+  final String icon;
   final Color iconColor;
   final bool isDebit;
 
