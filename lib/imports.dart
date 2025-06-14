@@ -8,3 +8,5 @@ export 'package:banking_dashboard/gen/assets.gen.dart';
 export 'package:banking_dashboard/core/extensions/extensions.dart';
 export 'package:stacked_hooks/stacked_hooks.dart';
 export 'package:banking_dashboard/presentation/home/views/home_app_bar.dart';
+export 'package:banking_dashboard/presentation/home/views/home_action_buttons.dart';
+export 'package:banking_dashboard/presentation/home/views/home_balance_card.dart';
