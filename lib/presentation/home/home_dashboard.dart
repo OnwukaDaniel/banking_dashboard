@@ -5,17 +5,18 @@ class HomeDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => HomeViewmodel(),
       onViewModelReady: (model) => model.init(),
       builder: (context, model, child) {
         return Scaffold(
+          key: model.navKey,
           backgroundColor: ColorUtils.appColor,
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
             child: HomeAppBar(),
           ),
+          drawer: HomeDrawer(),
           body: Stack(
             children: [
               ListView(

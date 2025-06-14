@@ -4,6 +4,7 @@ class HomeViewmodel extends BaseViewModel {
   PageController pageController = PageController(viewportFraction: .95);
   String get userName => 'Martin Jones';
   String get totalBalance => '0';
+  GlobalKey<ScaffoldState> navKey = GlobalKey();
   HomeBottomIcon selectedBottomTab = HomeBottomIcon.home;
 
   List<TransactionModel> get transactions => [

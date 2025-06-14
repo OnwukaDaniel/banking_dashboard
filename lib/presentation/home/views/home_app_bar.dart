@@ -9,7 +9,7 @@ class HomeAppBar extends StackedHookView<HomeViewmodel> {
       backgroundColor: ColorUtils.appColor,
       leadingWidth: 96,
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () => model.navKey.currentState?.openDrawer(),
         icon: Container(
           clipBehavior: Clip.hardEdge,
           padding: EdgeInsets.all(2),
