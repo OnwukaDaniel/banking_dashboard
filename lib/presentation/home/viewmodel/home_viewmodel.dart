@@ -1,8 +1,9 @@
 import 'package:banking_dashboard/imports.dart';
 
 class HomeViewmodel extends BaseViewModel {
+  PageController pageController = PageController(viewportFraction: .95);
   String get userName => 'Martin Jones';
-  String get totalBalance => '0.00';
+  String get totalBalance => '0';
 
   List<TransactionModel> get transactions => [
     TransactionModel(
@@ -42,6 +43,10 @@ class HomeViewmodel extends BaseViewModel {
       isDebit: false,
     ),
   ];
+
+  init() {
+    pageController.addListener(() => notifyListeners());
+  }
 
   void onSendTap() {
   }

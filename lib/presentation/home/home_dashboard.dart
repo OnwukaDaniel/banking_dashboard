@@ -1,12 +1,15 @@
 import 'package:banking_dashboard/imports.dart';
+import 'package:banking_dashboard/presentation/home/views/home_banner_indicator.dart';
 
 class HomeDashboard extends StatelessWidget {
   const HomeDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => HomeViewmodel(),
+      onViewModelReady: (model) => model.init(),
       builder: (context, model, child) {
         return Scaffold(
           backgroundColor: ColorUtils.appColor,
@@ -16,10 +19,16 @@ class HomeDashboard extends StatelessWidget {
           ),
           body: ListView(
             children: [
-              24.h,
               HomeBalanceCard(),
-              HomeActionButtons(),
-
+              SizedBox(
+                height: 180,
+                child: PageView(
+                  controller: model.pageController,
+                  children: [HomeBanner1(), HomeBanner2()],
+                ),
+              ),
+              HomeBannerIndicator(),
+              8.h,
               Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -195,3 +204,4 @@ class HomeDashboard extends StatelessWidget {
     );
   }
 }
+

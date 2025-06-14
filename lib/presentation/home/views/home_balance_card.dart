@@ -6,20 +6,20 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
   @override
   Widget builder(BuildContext context, model) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      margin: const EdgeInsets.only(bottom: 10, right: 20, left: 20, top: 20),
       decoration: BoxDecoration(
         color: ColorUtils.transGrey,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(40),
           topLeft: Radius.circular(40),
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20),
+          bottomLeft: Radius.circular(32),
+          bottomRight: Radius.circular(32),
         ),
       ),
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.only(bottom: 20, right: 20, left: 20, top: 10),
             decoration: BoxDecoration(
               color: ColorUtils.appAccentColor,
               borderRadius: BorderRadius.circular(40),
@@ -29,72 +29,77 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(4),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withAlpha(80),
-                            borderRadius: BorderRadius.circular(8),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white.withAlpha(50),
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Assets.images.gbFlag.image(width: 18),
                           ),
-                          child: const Icon(
-                            Icons.account_balance_wallet,
-                            color: Colors.white,
-                            size: 16,
+                          const Text(
+                            'GBP',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: 8),
-                        const Text(
-                          'GBP',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                          18.w,
+                          const Icon(
+                            Icons.keyboard_arrow_down,
+                            color: Colors.black,
+                            size: 20,
                           ),
-                        ),
-                        const Icon(
-                          Icons.keyboard_arrow_down,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    const Icon(
-                      Icons.visibility_outlined,
-                      color: Colors.white,
-                      size: 20,
+                    IconButton(
+                      icon: Assets.svg.eyeClose.svg(width: 18),
+                      onPressed: () {},
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                8.h,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Total balance',
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 14,
+                    const Text(
+                      'Total balance',
+                      style: TextStyle(color: Colors.black, fontSize: 16),
+                    ),
+                    8.h,
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: '£${model.totalBalance}.',
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        Text(
-                          '£${model.totalBalance}',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
+                          TextSpan(
+                            text: '00',
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 23,
+                            ),
                           ),
-                        ),
-                      ],
+                        ]
+                      ),
                     ),
                   ],
                 ),
               ],
             ),
           ),
+          HomeActionButtons(),
         ],
       ),
     );
