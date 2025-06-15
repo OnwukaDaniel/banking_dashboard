@@ -9,6 +9,7 @@ class HomeViewmodel extends BaseViewModel {
 
   String get totalBalance => '0';
   bool hasFingerPrint = false;
+  bool hideBalance = false;
   var bannerPage = 0.0;
   GlobalKey<ScaffoldState> navKey = GlobalKey();
   HomeBottomIcon selectedBottomTab = HomeBottomIcon.home;
@@ -114,6 +115,11 @@ class HomeViewmodel extends BaseViewModel {
 
   setHasFingerPrint(bool input) {
     hasFingerPrint = input;
+    notifyListeners();
+  }
+
+  setHideBalance(bool input) {
+    hideBalance = input;
     notifyListeners();
   }
 

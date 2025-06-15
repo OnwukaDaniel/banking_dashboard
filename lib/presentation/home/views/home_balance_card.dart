@@ -58,8 +58,8 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
                       ),
                     ),
                     IconButton(
-                      icon: Assets.svg.eyeClose.svg(width: 18),
-                      onPressed: () {},
+                      icon: model.hideBalance? Assets.svg.eyeClose.svg(width: 18): Icon(Icons.visibility_outlined, color: Colors.black,),
+                      onPressed: () => model.setHideBalance(!model.hideBalance),
                     ),
                   ],
                 ),
@@ -76,7 +76,7 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: '£${model.totalBalance}.',
+                            text: model.hideBalance? '***.': '£${model.totalBalance}.',
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 32,
@@ -84,7 +84,7 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
                             ),
                           ),
                           TextSpan(
-                            text: '00',
+                            text: model.hideBalance? '***.': '00',
                             style: const TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w300,
