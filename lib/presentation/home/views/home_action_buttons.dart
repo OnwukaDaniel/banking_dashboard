@@ -36,13 +36,22 @@ class HomeActionButtons extends StackedHookView<HomeViewmodel> {
           ),
           24.w,
           IconButton(
-            onPressed: () {},
+            onPressed: () => model.addController.forward(from: 0),
             style: ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(
                 ColorUtils.dashButtonColor,
               ),
             ),
-            icon: Icon(Icons.add, color: Colors.white, size: 32),
+            icon: AnimatedBuilder(
+              animation: model.addController,
+              builder: (_, child) {
+                return Transform.rotate(
+                  angle: model.addController.value * 2 * math.pi,
+                  child: child,
+                );
+              },
+              child: Icon(Icons.add, color: Colors.white, size: 32),
+            ),
           ),
           24.w,
           IconButton(

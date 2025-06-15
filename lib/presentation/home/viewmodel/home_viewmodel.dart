@@ -14,6 +14,7 @@ class HomeViewmodel extends BaseViewModel {
   GlobalKey<ScaffoldState> navKey = GlobalKey();
   HomeBottomIcon selectedBottomTab = HomeBottomIcon.home;
   late final AnimationController reloadController;
+  late final AnimationController addController;
 
   List<TransactionModel> get transactions => [
     TransactionModel(
@@ -95,6 +96,10 @@ class HomeViewmodel extends BaseViewModel {
       vsync: provider,
       duration: const Duration(seconds: 1),
     );
+    addController = AnimationController(
+      vsync: provider,
+      duration: const Duration(seconds: 1),
+    );
     pageController.addListener(() {
       bannerPage = pageController.page ?? 0;
       notifyListeners();
@@ -126,6 +131,7 @@ class HomeViewmodel extends BaseViewModel {
   @override
   void dispose() {
     reloadController.dispose();
+    addController.dispose();
     super.dispose();
   }
 }
