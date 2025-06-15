@@ -5,6 +5,11 @@ A modern, animated banking dashboard mobile app built using **Flutter**, followi
 <p align="center">
   <img src="lib/readme/Screen_recording_20250615_021423.gif" alt="screenshot" width="300" style="margin-right: 16px;"/> 
 </p>
+
+### Download Apk
+
+📦 [Download APK](lib/readme/app-release.apk)
+
 ---
 
 ## 🚀 Getting Started
