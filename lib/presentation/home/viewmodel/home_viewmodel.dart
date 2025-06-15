@@ -4,7 +4,9 @@ import 'package:banking_dashboard/imports.dart';
 
 class HomeViewmodel extends BaseViewModel {
   PageController pageController = PageController(viewportFraction: .95);
+
   String get userName => 'Martin Jones';
+
   String get totalBalance => '0';
   bool hasFingerPrint = false;
   var bannerPage = 0.0;
@@ -93,11 +95,15 @@ class HomeViewmodel extends BaseViewModel {
       duration: const Duration(seconds: 1),
     );
     pageController.addListener(() {
-      bannerPage = pageController.page??0;
+      bannerPage = pageController.page ?? 0;
       notifyListeners();
     });
     Timer.periodic(Duration(seconds: 3), (_) {
-      pageController.animateToPage(pageController.page == 0? 1: 0, duration: Duration(milliseconds: 500), curve: Curves.linear);
+      pageController.animateToPage(
+        pageController.page == 0 ? 1 : 0,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.linear,
+      );
     });
   }
 
