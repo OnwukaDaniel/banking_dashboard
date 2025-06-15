@@ -3,8 +3,8 @@
 A modern, animated banking dashboard mobile app built using **Flutter**, following **Clean Architecture** and **MVVM** principles. Designed to be fast, modular, and developer-friendly.
 
 <p align="center">
-  <img src="lib/readme/img.png" alt="screenshot" width="100" style="margin-right: 16px;"/> 
-  <img src="lib/readme/Screenshot_20250615_020904.png" alt="screenshot" width="100"/>
+  <img src="lib/readme/img.png" alt="screenshot" width="300" style="margin-right: 16px;"/> 
+  <img src="lib/readme/Screenshot_20250615_020904.png" alt="screenshot" width="300"/>
 </p>
 
 ---
