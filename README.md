@@ -6,6 +6,17 @@ A modern, animated banking dashboard mobile app built using **Flutter**, followi
   <img src="lib/readme/img.png" alt="screenshot" width="300" style="margin-right: 16px;"/> 
   <img src="lib/readme/Screenshot_20250615_020904.png" alt="screenshot" width="300"/>
 </p>
+---
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/onwukadaniel/banking_dashboard.git
+cd banking_dashboard
+flutter pub get
+flutter pub run build_runner build --delete-conflicting-outputs
+flutter run
+```
 
 ---
 
@@ -33,15 +44,9 @@ A modern, animated banking dashboard mobile app built using **Flutter**, followi
 
 ---
 
-## 🚀 Getting Started
+## Folder structure
 
-```bash
-git clone https://github.com/onwukadaniel/banking_dashboard.git
-cd banking_dashboard
-flutter pub get
-flutter pub run build_runner build --delete-conflicting-outputs
-flutter run
-
+```
 lib/
 ├── data/
 │   └── models/
@@ -57,3 +62,4 @@ lib/
 │   └── svg/
 ├── gen/
 └── main.dart
+```
