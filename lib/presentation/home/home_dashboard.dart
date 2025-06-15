@@ -1,13 +1,19 @@
 import 'package:banking_dashboard/imports.dart';
 
-class HomeDashboard extends StatelessWidget {
+class HomeDashboard extends StatefulWidget {
   const HomeDashboard({super.key});
+
+  @override
+  State<HomeDashboard> createState() => _HomeDashboardState();
+}
+
+class _HomeDashboardState extends State<HomeDashboard> with TickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => HomeViewmodel(),
-      onViewModelReady: (model) => model.init(),
+      onViewModelReady: (model) => model.init(this),
       builder: (context, model, child) {
         return Scaffold(
           key: model.navKey,

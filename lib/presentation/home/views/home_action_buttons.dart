@@ -1,10 +1,12 @@
+import 'dart:math' as math;
+
 import 'package:banking_dashboard/imports.dart';
 
-class HomeActionButtons extends StatelessWidget {
+class HomeActionButtons extends StackedHookView<HomeViewmodel> {
   const HomeActionButtons({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder(BuildContext context, model) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 18),
       child: Row(
@@ -44,13 +46,24 @@ class HomeActionButtons extends StatelessWidget {
           ),
           24.w,
           IconButton(
-            onPressed: () {},
+            onPressed: () => model.reloadController.forward(from: 0),
             style: ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(
                 ColorUtils.dashButtonColor,
               ),
             ),
-            icon: Assets.svg.reload.svg(color: Colors.white),
+            icon: AnimatedBuilder(
+              animation: model.reloadController,
+              builder: (_, child) {
+                return Transform.rotate(
+                  angle: model.reloadController.value * 2 * math.pi,
+                  child: child,
+                );
+              },
+              child: Assets.svg.reload.svg(
+                colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcATop),
+              ),
+            ),
           ),
           24.w,
         ],

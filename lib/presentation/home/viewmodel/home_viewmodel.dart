@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:banking_dashboard/imports.dart';
 
 class HomeViewmodel extends BaseViewModel {
@@ -8,6 +10,7 @@ class HomeViewmodel extends BaseViewModel {
   var bannerPage = 0.0;
   GlobalKey<ScaffoldState> navKey = GlobalKey();
   HomeBottomIcon selectedBottomTab = HomeBottomIcon.home;
+  late final AnimationController reloadController;
 
   List<TransactionModel> get transactions => [
     TransactionModel(
@@ -84,10 +87,17 @@ class HomeViewmodel extends BaseViewModel {
     ),
   ];
 
-  init() {
+  init(TickerProvider provider) {
+    reloadController = AnimationController(
+      vsync: provider,
+      duration: const Duration(seconds: 1),
+    );
     pageController.addListener(() {
       bannerPage = pageController.page??0;
       notifyListeners();
+    });
+    Timer.periodic(Duration(seconds: 3), (_) {
+      pageController.animateToPage(pageController.page == 0? 1: 0, duration: Duration(milliseconds: 500), curve: Curves.linear);
     });
   }
 
@@ -99,5 +109,11 @@ class HomeViewmodel extends BaseViewModel {
   setHasFingerPrint(bool input) {
     hasFingerPrint = input;
     notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    reloadController.dispose();
+    super.dispose();
   }
 }
