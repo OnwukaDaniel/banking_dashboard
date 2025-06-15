@@ -5,6 +5,7 @@ class HomeViewmodel extends BaseViewModel {
   String get userName => 'Martin Jones';
   String get totalBalance => '0';
   bool hasFingerPrint = false;
+  var bannerPage = 0.0;
   GlobalKey<ScaffoldState> navKey = GlobalKey();
   HomeBottomIcon selectedBottomTab = HomeBottomIcon.home;
 
@@ -84,8 +85,10 @@ class HomeViewmodel extends BaseViewModel {
   ];
 
   init() {
-    pageController = PageController(viewportFraction: .95);
-    pageController.addListener(() => notifyListeners());
+    pageController.addListener(() {
+      bannerPage = pageController.page??0;
+      notifyListeners();
+    });
   }
 
   setHomeTab(HomeBottomIcon input) {
