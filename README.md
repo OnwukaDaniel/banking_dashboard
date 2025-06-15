@@ -4,8 +4,6 @@ A modern, animated banking dashboard mobile app built using **Flutter**, followi
 
 <p align="center">
   <img src="lib/readme/Screen_recording_20250615_021423.gif" alt="screenshot" width="300" style="margin-right: 16px;"/> 
-  <img src="lib/readme/img.png" alt="screenshot" width="300" style="margin-right: 16px;"/> 
-  <img src="lib/readme/Screenshot_20250615_020904.png" alt="screenshot" width="300"/>
 </p>
 ---
 
