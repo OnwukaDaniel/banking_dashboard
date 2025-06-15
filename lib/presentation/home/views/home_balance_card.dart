@@ -19,7 +19,12 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.only(bottom: 20, right: 20, left: 20, top: 10),
+            padding: const EdgeInsets.only(
+              bottom: 20,
+              right: 20,
+              left: 20,
+              top: 10,
+            ),
             decoration: BoxDecoration(
               color: ColorUtils.appAccentColor,
               borderRadius: BorderRadius.circular(40),
@@ -58,7 +63,13 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
                       ),
                     ),
                     IconButton(
-                      icon: model.hideBalance? Assets.svg.eyeClose.svg(width: 18): Icon(Icons.visibility_outlined, color: Colors.black,),
+                      icon:
+                          model.hideBalance
+                              ? Assets.svg.eyeClose.svg(width: 18)
+                              : Icon(
+                                Icons.visibility_outlined,
+                                color: Colors.black,
+                              ),
                       onPressed: () => model.setHideBalance(!model.hideBalance),
                     ),
                   ],
@@ -76,7 +87,10 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: model.hideBalance? '***.': '£${model.totalBalance}.',
+                            text:
+                                model.hideBalance
+                                    ? '***.'
+                                    : '£${model.totalBalance}.',
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 32,
@@ -84,14 +98,14 @@ class HomeBalanceCard extends StackedHookView<HomeViewmodel> {
                             ),
                           ),
                           TextSpan(
-                            text: model.hideBalance? '***.': '00',
+                            text: model.hideBalance ? '***.' : '00',
                             style: const TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w300,
                               fontSize: 23,
                             ),
                           ),
-                        ]
+                        ],
                       ),
                     ),
                   ],
