@@ -15,24 +15,120 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/affiliate.png
+  AssetGenImage get affiliate =>
+      const AssetGenImage('assets/images/affiliate.png');
+
   /// File path: assets/images/banner1.png
   AssetGenImage get banner1 => const AssetGenImage('assets/images/banner1.png');
 
   /// File path: assets/images/banner2.png
   AssetGenImage get banner2 => const AssetGenImage('assets/images/banner2.png');
 
+  /// File path: assets/images/convert.png
+  AssetGenImage get convert => const AssetGenImage('assets/images/convert.png');
+
+  /// File path: assets/images/device_sessions.png
+  AssetGenImage get deviceSessions =>
+      const AssetGenImage('assets/images/device_sessions.png');
+
+  /// File path: assets/images/fingerprint.png
+  AssetGenImage get fingerprint =>
+      const AssetGenImage('assets/images/fingerprint.png');
+
   /// File path: assets/images/gb_flag.png
   AssetGenImage get gbFlag => const AssetGenImage('assets/images/gb_flag.png');
 
+  /// File path: assets/images/globe.png
+  AssetGenImage get globe => const AssetGenImage('assets/images/globe.png');
+
+  /// File path: assets/images/inbox.png
+  AssetGenImage get inbox => const AssetGenImage('assets/images/inbox.png');
+
+  /// File path: assets/images/kyc_scan.png
+  AssetGenImage get kycScan =>
+      const AssetGenImage('assets/images/kyc_scan.png');
+
+  /// File path: assets/images/login_otp.png
+  AssetGenImage get loginOtp =>
+      const AssetGenImage('assets/images/login_otp.png');
+
+  /// File path: assets/images/logout.png
+  AssetGenImage get logout => const AssetGenImage('assets/images/logout.png');
+
   /// File path: assets/images/ng_flag.png
   AssetGenImage get ngFlag => const AssetGenImage('assets/images/ng_flag.png');
+
+  /// File path: assets/images/notification2.png
+  AssetGenImage get notification2 =>
+      const AssetGenImage('assets/images/notification2.png');
+
+  /// File path: assets/images/password.png
+  AssetGenImage get password =>
+      const AssetGenImage('assets/images/password.png');
+
+  /// File path: assets/images/person.png
+  AssetGenImage get person => const AssetGenImage('assets/images/person.png');
+
+  /// File path: assets/images/person3.png
+  AssetGenImage get person3 => const AssetGenImage('assets/images/person3.png');
+
+  /// File path: assets/images/setting.png
+  AssetGenImage get setting => const AssetGenImage('assets/images/setting.png');
+
+  /// File path: assets/images/support_24.png
+  AssetGenImage get support24 =>
+      const AssetGenImage('assets/images/support_24.png');
+
+  /// File path: assets/images/timer.png
+  AssetGenImage get timer => const AssetGenImage('assets/images/timer.png');
+
+  /// File path: assets/images/transaction.png
+  AssetGenImage get transaction =>
+      const AssetGenImage('assets/images/transaction.png');
+
+  /// File path: assets/images/two_factor.png
+  AssetGenImage get twoFactor =>
+      const AssetGenImage('assets/images/two_factor.png');
+
+  /// File path: assets/images/unlock.png
+  AssetGenImage get unlock => const AssetGenImage('assets/images/unlock.png');
 
   /// File path: assets/images/user_img.png
   AssetGenImage get userImg =>
       const AssetGenImage('assets/images/user_img.png');
 
+  /// File path: assets/images/verify.png
+  AssetGenImage get verify => const AssetGenImage('assets/images/verify.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [banner1, banner2, gbFlag, ngFlag, userImg];
+  List<AssetGenImage> get values => [
+    affiliate,
+    banner1,
+    banner2,
+    convert,
+    deviceSessions,
+    fingerprint,
+    gbFlag,
+    globe,
+    inbox,
+    kycScan,
+    loginOtp,
+    logout,
+    ngFlag,
+    notification2,
+    password,
+    person,
+    person3,
+    setting,
+    support24,
+    timer,
+    transaction,
+    twoFactor,
+    unlock,
+    userImg,
+    verify,
+  ];
 }
 
 class $AssetsSvgGen {

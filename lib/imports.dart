@@ -19,3 +19,5 @@ export 'package:banking_dashboard/core/enums/home_bottom_icon.dart';
 export 'package:banking_dashboard/core/extensions/home_bottom_icon_extension.dart';
 export 'package:banking_dashboard/presentation/home/views/home_bottom_nav.dart';
 export 'package:banking_dashboard/presentation/home/views/home_drawer.dart';
+export 'package:banking_dashboard/core/enums/home_drawer_enum.dart';
+export 'package:banking_dashboard/data/models/drawer_sub_item.dart';
